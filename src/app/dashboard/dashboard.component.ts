@@ -27,8 +27,8 @@ export class DashboardComponent implements OnInit {
 
   public form = new FormGroup(
     {
-      username: new FormControl('Minatone', [Validators.required]),
-      tagline: new FormControl('br1', [Validators.required]),
+      username: new FormControl('', [Validators.required]),
+      tagline: new FormControl('', [Validators.required]),
       soupig: new FormControl(false, [Validators.required]),
     }
   );
