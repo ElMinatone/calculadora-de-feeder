@@ -1,0 +1,119 @@
+.dimensoes {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.dimensoes::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://i.imgur.com/iMC3ewy.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: brightness(0.7);
+    /* Filtro aplicado apenas no fundo */
+    z-index: -1;
+}
+
+.mx-auto.container {
+    position: relative;
+    z-index: 2;
+}
+
+::ng-deep {
+    swiper-container {
+        width: 528px;
+        height: 704px;
+    }
+
+    swiper-slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 18px;
+        font-size: 22px;
+        font-weight: bold;
+        color: #fff;
+    }
+
+    swiper-slide:nth-child(1n) {
+        background-color: rgb(206, 17, 17);
+    }
+
+    swiper-slide:nth-child(2n) {
+        background-color: rgb(0, 140, 255);
+    }
+
+    swiper-slide:nth-child(3n) {
+        background-color: rgb(10, 184, 111);
+    }
+
+    swiper-slide:nth-child(4n) {
+        background-color: rgb(211, 122, 7);
+    }
+
+    swiper-slide:nth-child(5n) {
+        background-color: rgb(118, 163, 12);
+    }
+
+    swiper-slide:nth-child(6n) {
+        background-color: rgb(180, 10, 47);
+    }
+
+    swiper-slide:nth-child(7n) {
+        background-color: rgb(35, 99, 19);
+    }
+
+    swiper-slide:nth-child(8n) {
+        background-color: rgb(0, 68, 255);
+    }
+
+    swiper-slide:nth-child(9n) {
+        background-color: rgb(218, 12, 218);
+    }
+
+    swiper-slide:nth-child(10n) {
+        background-color: rgb(54, 94, 77);
+    }
+}
+
+.tamanhoCard {
+    position: relative; /* Necessário para o posicionamento do pseudo-elemento */
+    background-size: cover; /* Preenche o slide sem distorção */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Não repete a imagem */
+    width: 100%; /* Garante que o slide ocupe toda a largura */
+    height: 100%; /* Garante que o slide ocupe toda a altura */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Garante que o pseudo-elemento não vaze para fora do card */
+  
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: inherit; /* Usa a mesma imagem de fundo */
+      background-size: inherit;
+      background-position: inherit;
+      background-repeat: inherit;
+      filter: brightness(0.5); /* Aplica o efeito de brilho */
+      z-index: 1; /* Coloca o pseudo-elemento atrás do conteúdo */
+    }
+  
+    > * {
+      position: relative;
+      z-index: 2; /* Garante que o conteúdo fique acima do pseudo-elemento */
+    }
+  }
